@@ -4,8 +4,6 @@ import pygame
 from pygame.locals import Rect, QUIT, KEYDOWN, K_w, K_e, K_r, K_v, KEYUP,\
                           K_UP, K_DOWN, K_RIGHT, K_LEFT, K_u, K_p, K_i, K_k,\
                           K_l, K_SPACE, K_j, K_1, K_2, K_n
-import numpy as np
-from pygame.mixer import music
 
 pygame.init()
 pygame.key.set_repeat(5, 5)
@@ -2408,22 +2406,6 @@ def main():
             mv_rect.center = (950, 33)
             SURFACE.blit(mv, mv_rect)
         elif enter == True:
-            if MUSIC == True and FINISH == False and u != 2:
-                pygame.mixer.music.stop()
-                music.load("./mgsMain.wav")
-                music.set_volume(1.0)
-                music.play(loops=-1, start=0.0)
-            elif MUSIC == True and FINISH == True and u != 2:
-                pygame.mixer.music.stop()
-                music.load("./mgsAlert.wav")
-                music.set_volume(4.0)
-                music.play(loops=-1, start=0.0)
-            elif MUSIC == True and FINISH == False and u == 2:
-                pygame.mixer.music.stop()
-                music.load("./mgsAlert.wav")
-                music.set_volume(4.0)
-                music.play(loops=-1, start=0.0)
-            MUSIC = False
             STOP = False
             tick()
             paint()
