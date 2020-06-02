@@ -1,3 +1,5 @@
+# coding: utf-8
+
 import sys
 from math import sin, cos, radians, degrees, hypot, acos
 import pygame
